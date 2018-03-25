@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M2 Task 1 ConsoleUI", "Modu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M2 Task 2", "Module 2\M2 Task 2\M2 Task 2.csproj", "{26CFD551-0906-4459-91A6-9D82FE871A06}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M2 Task 2 UnitTests", "Module 2\M2 Task 2 UnitTests\M2 Task 2 UnitTests.csproj", "{A4C1A906-2B15-47EE-9D21-F7C3E19FACEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{26CFD551-0906-4459-91A6-9D82FE871A06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26CFD551-0906-4459-91A6-9D82FE871A06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26CFD551-0906-4459-91A6-9D82FE871A06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4C1A906-2B15-47EE-9D21-F7C3E19FACEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4C1A906-2B15-47EE-9D21-F7C3E19FACEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4C1A906-2B15-47EE-9D21-F7C3E19FACEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4C1A906-2B15-47EE-9D21-F7C3E19FACEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

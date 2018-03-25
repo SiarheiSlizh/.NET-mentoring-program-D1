@@ -10,7 +10,7 @@ namespace M2_Task_2
     public static class StringConverter
     {
         #region props
-        public static Regex intRegex = new Regex(@"^([\d]|\+[\d]|-[\d])\d*");
+        public static Regex intRegex = new Regex(@"^([\d]|\+[\d]|-[\d])\d+$");
         #endregion
 
         #region API
@@ -71,7 +71,7 @@ namespace M2_Task_2
 
             for (int i = start; i < str.Length; i++)
             {
-                result *= result + (str[i] - '0');
+                result = result * 10 + (str[i] - '0');
             }
             return result;
         }
