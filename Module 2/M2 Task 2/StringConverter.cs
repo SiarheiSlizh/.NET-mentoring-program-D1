@@ -10,7 +10,7 @@ namespace M2_Task_2
     public static class StringConverter
     {
         #region props
-        public static Regex intRegex = new Regex(@"^([\d]|\+[\d]|-[\d])\d+$");
+        private static readonly Regex intRegex = new Regex(@"^([\d]|\+[\d]|-[\d])\d+$");
         #endregion
 
         #region API
