@@ -1,4 +1,5 @@
 ﻿using M4_Console_UI.Configuration;
+using M4_Console_UI.Services;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -18,17 +19,18 @@ namespace M4_Console_UI
 
             var section = (FileSystemSettings)ConfigurationManager.GetSection("fileSystemSettings");
 
-            Console.WriteLine(section.CultureInfo.Name);
+            FileSystemMonitoringService service = new FileSystemMonitoringService(section, new ConsoleLogger());
+            service.StartWatch();
 
-            foreach(FileSystemRule el in section.Rules)
+            do
             {
-                Console.WriteLine(el.Filter + "   " + el.Path + "   " + el.AddSerial + "   " + el.AddDateTime);
-            }
+                do
+                {
+                     
+                } while (!Console.KeyAvailable);
+            } while (Console.ReadKey().Key != ConsoleKey.Escape);
 
-            foreach(FolderForListening el in section.Folders)
-            {
-                Console.Write(el.Path);
-            }
+            service.EndWatch();
         }
     }
 }
