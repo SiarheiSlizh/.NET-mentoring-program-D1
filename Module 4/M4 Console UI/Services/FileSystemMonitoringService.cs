@@ -1,5 +1,6 @@
 ﻿using M4_Console_UI.Configuration;
 using M4_Console_UI.Interfaces;
+using M4_Console_UI.Resources;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -44,8 +45,8 @@ namespace M4_Console_UI.Services
             {
                 if (settings == null)
                 {
-                    logger.Error("No settings");
-                    throw new ArgumentNullException($"No Settings");
+                    logger.Error(Resource.NoSettings);
+                    throw new ArgumentNullException(Resource.NoSettings);
                 }
 
                 ValidateFolders(settings.Folders);
@@ -71,7 +72,7 @@ namespace M4_Console_UI.Services
             {
                 if (!Directory.Exists(folder.Path))
                 {
-                    throw new DirectoryNotFoundException($"path {folder.Path} is not existed");
+                    throw new DirectoryNotFoundException(string.Format(Resource.DirectoryNotFound, folder.Path));
                 }
                 watchers[i++] = new FileSystemWatcher(folder.Path);
             }
@@ -80,7 +81,7 @@ namespace M4_Console_UI.Services
         private void OnCreated(object sender, FileSystemEventArgs e)
         {
             var sourcePath = ((FileSystemWatcher)sender).Path;
-            logger.Info($"file {e.Name} was added into {sourcePath} directory at {DateTime.Now}");
+            logger.Info(string.Format(Resource.FileCreated, e.Name, sourcePath, DateTime.Now));
 
             this.MoveFiles(sourcePath);
         }
@@ -91,7 +92,7 @@ namespace M4_Console_UI.Services
             {
                 if (!Directory.Exists(rule.Path))
                 {
-                    logger.Error($"There is no possibility to move files to {rule.Path} folder because it is not existed.");
+                    logger.Error(string.Format(Resource.FileMoveError, rule.Path));
                     continue;
                 }
 
@@ -107,14 +108,23 @@ namespace M4_Console_UI.Services
                     {
                         if (rule.AddSerial)
                         {
-                            fileName = $"{serial++}{fileName}";
+                            fileName = $"{serial++}_{fileName}";
                         }
                         if (rule.AddDateTime)
                         {
-                            fileName = $"{DateTime.Now.Day}{DateTime.Now.Month}{DateTime.Now.Year}{fileName}";
+                            fileName = $"{DateTime.Now.Day}_{DateTime.Now.Month}_{DateTime.Now.Year}_{fileName}";
                         }
-                        File.Move(file, $"{rule.Path}\\{fileName}");
-                        logger.Info($"{fileName} was moved into {rule.Path}");
+
+                        try
+                        {
+                            File.Move(file, $"{rule.Path}\\{fileName}");
+                            logger.Info(string.Format(Resource.FileMoveSuccess, fileName, rule.Path));
+                        }
+                        catch(IOException ex)
+                        {
+                            logger.Error(ex.Message);
+                            throw;
+                        }
                     }
                 }
             }

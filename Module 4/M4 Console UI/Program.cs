@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace M4_Console_UI
@@ -15,6 +16,7 @@ namespace M4_Console_UI
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("ru-RU culture");
             FileSystemWatcher fsw = new FileSystemWatcher();
 
             var section = (FileSystemSettings)ConfigurationManager.GetSection("fileSystemSettings");
@@ -22,15 +24,30 @@ namespace M4_Console_UI
             FileSystemMonitoringService service = new FileSystemMonitoringService(section, new ConsoleLogger());
             service.StartWatch();
 
+            PauseWhileEscNotEntered();
+
+            Console.WriteLine("Change culture to en-US");
+            var currCulture = new System.Globalization.CultureInfo(section.CultureInfo.Name);
+
+            System.Globalization.CultureInfo.DefaultThreadCurrentCulture = currCulture;
+            System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = currCulture;
+
+            PauseWhileEscNotEntered();
+
+            service.EndWatch();
+
+            Console.WriteLine("END");
+        }
+
+        private static void PauseWhileEscNotEntered()
+        {
             do
             {
                 do
                 {
-                     
+
                 } while (!Console.KeyAvailable);
             } while (Console.ReadKey().Key != ConsoleKey.Escape);
-
-            service.EndWatch();
         }
     }
 }
