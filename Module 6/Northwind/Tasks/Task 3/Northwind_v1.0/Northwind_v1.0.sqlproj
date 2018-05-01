@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>Northwind</Name>
+    <Name>Northwind_v1.0</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{68c1d10a-d307-4527-bd82-51e15861b340}</ProjectGuid>
+    <ProjectGuid>{85da7a5c-dd8f-4e42-8ca9-9edd6e241229}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>Northwind</RootNamespace>
-    <AssemblyName>Northwind</AssemblyName>
+    <RootNamespace>Northwind_v1.0</RootNamespace>
+    <AssemblyName>Northwind_v1.0</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -62,8 +62,6 @@
     <Folder Include="dbo\Views\" />
     <Folder Include="dbo\Stored Procedures\" />
     <Folder Include="Scripts\" />
-    <Folder Include="Tasks" />
-    <Folder Include="Tasks\Task 3" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Employees.sql" />
@@ -103,10 +101,5 @@
     <Build Include="dbo\Stored Procedures\CustOrderHist.sql" />
     <Build Include="dbo\Stored Procedures\SalesByCategory.sql" />
     <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Tasks\queriesTask1-2.sql" />
-    <None Include="Tasks\Task 3\v1.0_v1.1.sql" />
-    <None Include="Tasks\Task 3\v1.1_v1.3.sql" />
   </ItemGroup>
 </Project>
