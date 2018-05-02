@@ -19,6 +19,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M3 Task 1", "Module 3\M3 Ta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M4 Console UI", "Module 4\M4 Console UI\M4 Console UI.csproj", "{AF338929-9164-4251-903E-B5B0707CD291}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M5 Task 1", "Module 5\M5 Task 1\M5 Task 1.csproj", "{0FA4927D-36FA-4E38-9709-5573F8C6C810}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M5 UnitTests", "Module 5\M5 UnitTests\M5 UnitTests.csproj", "{8802E08C-7AAA-4B5A-8AB1-F357B991A72F}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Northwind", "Module 6\Northwind\Northwind.sqlproj", "{68C1D10A-D307-4527-BD82-51E15861B340}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +63,20 @@ Global
 		{AF338929-9164-4251-903E-B5B0707CD291}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF338929-9164-4251-903E-B5B0707CD291}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF338929-9164-4251-903E-B5B0707CD291}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FA4927D-36FA-4E38-9709-5573F8C6C810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FA4927D-36FA-4E38-9709-5573F8C6C810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FA4927D-36FA-4E38-9709-5573F8C6C810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FA4927D-36FA-4E38-9709-5573F8C6C810}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8802E08C-7AAA-4B5A-8AB1-F357B991A72F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8802E08C-7AAA-4B5A-8AB1-F357B991A72F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8802E08C-7AAA-4B5A-8AB1-F357B991A72F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8802E08C-7AAA-4B5A-8AB1-F357B991A72F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68C1D10A-D307-4527-BD82-51E15861B340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68C1D10A-D307-4527-BD82-51E15861B340}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68C1D10A-D307-4527-BD82-51E15861B340}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{68C1D10A-D307-4527-BD82-51E15861B340}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68C1D10A-D307-4527-BD82-51E15861B340}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68C1D10A-D307-4527-BD82-51E15861B340}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
